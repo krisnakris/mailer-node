@@ -1,9 +1,15 @@
 const{Group} = require('../models')
 
 class GroupController {
-  
+
   static getGroup (req, res) {
-    res.send('Minum')
+    Group.findAll()
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.send(err);
+      })
   }
 }
 
