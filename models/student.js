@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Student.hasMany(models.Group, {
+      Student.belongsToMany(models.Group, {
         through: models.StudentGroup,
         id: 'student_id'
       })
